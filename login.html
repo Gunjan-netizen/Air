@@ -46,6 +46,20 @@
             color: #B22222;
         }
     </style>
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "airindia" && password === "airindia") {
+                window.location.href = "profile.html"; // Redirect to profile page if correct
+            } else {
+                alert("Incorrect Username or Password. Try again!");
+            }
+
+            return false; // Prevent actual form submission
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -53,7 +67,7 @@
     </header>
 
     <div class="login-container">
-        <form action="dashboard.html" method="post">
+        <form onsubmit="return validateLogin();">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
