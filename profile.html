@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile - Air India Customer Support</title>
+    <title>Login - Air India Customer Support</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,40 +18,65 @@
             color: white;
             text-align: center;
         }
-        .content {
-            text-align: center;
-            margin-top: 50px;
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #B22222;
+            border-radius: 8px;
         }
-        .content h2 {
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #B22222;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #B22222;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #FFD700;
             color: #B22222;
         }
-        .content p {
-            font-size: 20px;
-            margin-top: 20px;
-        }
-        footer {
-            background-color: #B22222;
-            padding: 10px;
-            color: white;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
     </style>
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // If the username and password are 'airindia'
+            if (username === "airindia" && password === "airindia") {
+                window.location.href = "profile.html"; // Redirect to profile page
+            } else {
+                alert("Incorrect Username or Password. Try again!");
+            }
+
+            return false; // Prevent actual form submission
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1>Welcome to Your Profile</h1>
+        <h1>Login to Air India Customer Support</h1>
     </header>
 
-    <div class="content">
-        <h2>Chutiya Banaya, Bada Maza Aaya!</h2>
-        <p>Thank you for logging in. This was just a fun demo!</p>
-    </div>
+    <div class="login-container">
+        <form onsubmit="return validateLogin();">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
-    <footer>
-        <p>Air India Customer Support | &copy; 2024</p>
-    </footer>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
 </body>
 </html>
