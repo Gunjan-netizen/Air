@@ -51,11 +51,11 @@
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            // Check if the entered credentials match airindia
+            // If the username and password are 'airindia'
             if (username === "airindia" && password === "airindia") {
-                window.location.href = "profile.html"; // Redirect to profile page if correct
+                window.location.href = "profile.html"; // Redirect to profile page
             } else {
-                alert("Incorrect Username or Password. Try again!"); // Alert if credentials are incorrect
+                alert("Incorrect Username or Password. Try again!");
             }
 
             return false; // Prevent actual form submission
